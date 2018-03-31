@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>Archives: 2018 | 学习之路</title>
+<title>Optional 类 | 学习之路</title>
 
 
     <link rel="alternate" href="/atom.xml" title="学习之路" type="application/atom+xml">
@@ -118,57 +118,115 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <div id="main">
-  <div id="post-list">
-    <ul class="archives-post-list">
-    	<h1 class="info">2018年 月</h1>
-        
-          <li class="post-items" _href="/2018/03/31/谷歌机器学习/">
-            <h3 class="post-item-title">
-            	<a href="/2018/03/31/谷歌机器学习/"> 谷歌机器学习速成记录 </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/03/16/服务器部署mysql/">
-            <h3 class="post-item-title">
-            	<a href="/2018/03/16/服务器部署mysql/"> 如何在服务器上面部署MYSQL </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/03/01/XStream日期转化器/">
-            <h3 class="post-item-title">
-            	<a href="/2018/03/01/XStream日期转化器/"> XStresam日期转化器 </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/02/28/java8分享/">
-            <h3 class="post-item-title">
-            	<a href="/2018/02/28/java8分享/"> java 8  上 </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/02/09/Optional 类/">
-            <h3 class="post-item-title">
-            	<a href="/2018/02/09/Optional 类/"> Optional 类 </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/02/09/第一篇文章/">
-            <h3 class="post-item-title">
-            	<a href="/2018/02/09/第一篇文章/"> 测试 </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/02/09/hello-world/">
-            <h3 class="post-item-title">
-            	<a href="/2018/02/09/hello-world/"> Hello World </a>
-            </h3>  
-          </li>
-        
-    </ul>
-  </div>
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Optional 类">
+            
+	            Optional 类
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/后端">
+            后端
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a href="/tags/java8">
+               java8
+            </a>
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">2018/02/09</span>
+    </span>
 </div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <pre><code>一个属性
+private final T value; // 最终对于其他方法的判断都是以这个值来进行判断的
+
+private static final Optional&lt;?&gt; EMPTY = new Optional&lt;&gt;();
+
+
+Optional无参的构造方法将value值赋值为null
+
+然鹅这个有参的构造方法要求的值必须是非空的
+private Optional(T value) {
+    this.value = Objects.requireNonNull(value);
+}
+
+Optional.of()的参数必须是非空的
+这个方法返回的式Optional的一个有参的构造方法
+
+
+Objects.requireNonNull(); 这个方法的参数如果是空的则会抛出空指针异常
+
+ofNullable( T value) // 其实这边就是将可能为空的一个用一个无参的Optional的对象来替换 将value设置为null     如果不为空的值就用有参数的Optional对象来替换  将value设置为  ofNullable( T value) 方法的值
+value == null ? empty() : of(value)
+
+isPresent() // 就是判断value的值是不是为空  空返回false 非空的 返回true
+</code></pre>
+    </div>
+
+    <div class="post-footer">   
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>  
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/02/28/java8分享/" class="pre-post btn btn-default"><i class="fa fa-angle-left fa-fw"></i>上一篇</a>
+    
+    
+        <a href="/2018/02/09/第一篇文章/" class="next-post btn btn-default">下一篇<i class="fa fa-angle-right fa-fw"></i></a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNDQ0OC8xMDk4NQ">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
 
 
 
