@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>Archives: 2018/2 | 学习之路</title>
+<title>修改服务器mysql用户名密码 | 学习之路</title>
 
 
     <link rel="alternate" href="/atom.xml" title="学习之路" type="application/atom+xml">
@@ -118,39 +118,114 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <div id="main">
-  <div id="post-list">
-    <ul class="archives-post-list">
-    	<h1 class="info">2018年 2月</h1>
-        
-          <li class="post-items" _href="/2018/02/28/java8分享/">
-            <h3 class="post-item-title">
-            	<a href="/2018/02/28/java8分享/"> java 8  上 </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/02/09/Optional 类/">
-            <h3 class="post-item-title">
-            	<a href="/2018/02/09/Optional 类/"> Optional 类 </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/02/09/第一篇文章/">
-            <h3 class="post-item-title">
-            	<a href="/2018/02/09/第一篇文章/"> 测试 </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/02/09/hello-world/">
-            <h3 class="post-item-title">
-            	<a href="/2018/02/09/hello-world/"> Hello World </a>
-            </h3>  
-          </li>
-        
-    </ul>
-  </div>
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="修改服务器mysql用户名密码">
+            
+	            修改服务器mysql用户名密码
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/坑">
+            坑
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a href="/tags/遇过的坑">
+               遇过的坑
+            </a>
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">2018/03/16</span>
+    </span>
 </div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <blockquote>
+<p>ERROR 1045 (28000): Access denied for user ‘root’@’localhost’ (using password: YES)</p>
+</blockquote>
+<p>重置密码解决MySQL for Linux错误 ERROR 1045 (28000): Access denied for user ‘root’@’localhost’ (using password: YES)<br>一般这个错误是由密码错误引起，解决的办法自然就是重置密码。</p>
+<p>假设我们使用的是root账户。</p>
+<p>1.重置密码的第一步就是跳过MySQL的密码认证过程，方法如下：</p>
+<p>#vim /etc/my.cnf(注：windows下修改的是my.ini)</p>
+<p>在文档内搜索mysqld定位到[mysqld]文本段：<br>/mysqld(在vim编辑状态下直接输入该命令可搜索文本内容)</p>
+<p>在[mysqld]后面任意一行添加“skip-grant-tables”用来跳过密码验证的过程，如下图所示：</p>
+<p>保存文档并退出：</p>
+<p>#:wq<br>2.接下来我们需要重启MySQL：</p>
+<p>/etc/init.d/mysql restart(有些用户可能需要使用/etc/init.d/mysqld restart)</p>
+<p>3.重启之后输入#mysql即可进入mysql。</p>
+<p>4.接下来就是用sql来修改root的密码</p>
+<p>mysql&gt; use mysql;<br>mysql&gt; update user set password=password(“你的新密码”) where user=”root”;<br>mysql&gt; flush privileges;<br>mysql&gt; quit</p>
+<p>到这里root账户就已经重置成新的密码了。</p>
+<p>5.编辑my.cnf,去掉刚才添加的内容，然后重启MySQL。大功告成！</p>
+<h1 id="登录权限问题"><a href="#登录权限问题" class="headerlink" title="登录权限问题"></a>登录权限问题</h1><p>腾讯云   </p>
+<p>新增安全组 ——》 新建规则  ——-》 关联实例<br>对所有root用户授权：</p>
+<p>GRANT ALL PRIVILEGES ON <em>.</em> TO ‘root’@’%’ IDENTIFIED BY ‘root用户的密码’ WITH GRANT OPTION;</p>
+<p>也可以对指定IP的用户授权：</p>
+<p>GRANT ALL PRIVILEGES ON <em>.</em> TO ‘root’@’指定的IP’ IDENTIFIED BY ‘root用户的密码’ WITH GRANT OPTION;</p>
+
+    </div>
+
+    <div class="post-footer">   
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>  
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/03/16/服务器部署mysql/" class="pre-post btn btn-default"><i class="fa fa-angle-left fa-fw"></i>上一篇</a>
+    
+    
+        <a href="/2018/03/01/XStream日期转化器/" class="next-post btn btn-default">下一篇<i class="fa fa-angle-right fa-fw"></i></a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNDQ0OC8xMDk4NQ">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
 
 
 
