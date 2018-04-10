@@ -176,10 +176,10 @@
  * 模型有两个生命周期
     * 训练表示创建或学习模型。也就是说，您向模型展示有标签样本，让模型逐渐学习特征与标签之间的关系。
     * 推断表示将训练后的模型应用于无标签样本。也就是说，您使用训练后的模型来做出有用的预测 (y&apos;)。
-</code></pre><h1 id="2-线性回归-训练和损失"><a href="#2-线性回归-训练和损失" class="headerlink" title="2.线性回归 训练和损失"></a>2.线性回归 训练和损失</h1><h2 id="a-线性回归"><a href="#a-线性回归" class="headerlink" title="a.线性回归"></a>a.线性回归</h2><p><img name="蝉鸣和温度的关系" src="/img/线性关系.png" width="50%" height="50%"></p>
-<pre><code>![](./hexo-blog/public/蝉鸣和温度的关系图.png &apos;线性关系&apos;)
-
-***
+</code></pre><h1 id="2-线性回归-训练和损失"><a href="#2-线性回归-训练和损失" class="headerlink" title="2.线性回归 训练和损失"></a>2.线性回归 训练和损失</h1><h2 id="a-线性回归"><a href="#a-线性回归" class="headerlink" title="a.线性回归"></a>a.线性回归</h2><h3 id="如何求蝉鸣和温度的关系？"><a href="#如何求蝉鸣和温度的关系？" class="headerlink" title="如何求蝉鸣和温度的关系？"></a>如何求蝉鸣和温度的关系？</h3><p><img name="蝉鸣和温度的关系" src="/img/线性关系.png" width="60%" height="60%"></p>
+<p>一般都是找一条线,让更多的点能够在这条线上,然后求这个线的表示的函数</p>
+<p><img name="蝉鸣和温度的关系图" src="/img/蝉鸣和温度的关系图.png " width="60%" height="60%"></p>
+<pre><code>***
 由此其实我们可以得到一个函数 : y= kx+b ，这个函数其实就是蝉鸣和温度关系的一个模型
 在机器学习中通常表示为 : y&apos; = b + w1x1 
 y&apos; 表示 我们预测的值
@@ -191,11 +191,27 @@ w1 表示 特征的权重
 
 y&apos; = b + w1x1 + w2x2 + w3x3 这个就是一个三个特征的模型
 </code></pre><h2 id="b-训练和损失"><a href="#b-训练和损失" class="headerlink" title="b.训练和损失"></a>b.训练和损失</h2><pre><code>经验风险最小化:机器学习算法通过检查多个样本并尝试找出可最大限度减少损失的模型
-![](./hexo-blog/public/损失情况.png &apos;损失&apos;)
+</code></pre><p><img src="/img/损失情况.png" width="60%" height="60%"></p>
+<pre><code>上图所示的就很清楚的可以看到左侧模型的损失比右侧的大，而这边的算法就是为了找出一个损失的最小的模型。
+
+怎么来判断损失最小呢？为此有创建了一个函数来计算损失
 
 L2损失 (损失函数,平方损失) : (y - y&apos;)2  有标签样本的实际的标签值 和 预测标签值之间的平方差 
 
 均方误差 MSE :每个样本的平均平方损失
+</code></pre><p><img src="/img/均方误差计算公式.png" width="60%" height="60%"></p>
+<pre><code>* (x,y)指样本 
+* prediction(x) 就是我们预测的模型 
+* D 指的是样本的数据集
+* N 是样本的数量
+
+MSE只是众多损失函数中的一种。并不能适用所有的情形的下的损失计算。
+</code></pre><hr>
+<h2 id="c-降低损失"><a href="#c-降低损失" class="headerlink" title="c.降低损失"></a>c.降低损失</h2><pre><code>有了损失,我们所要做的就是降低损失，如何来降低损失呢？
+&lt;br/&gt;
+主要是迭代试错
+</code></pre><p><img src="/img/训练模型迭代试错.png" width="60%" height="60%"></p>
+<pre><code>通过样本中的特征输入获取到的预测的值 与 该样本的实际标签进行比较计算出损失。然后换模型迭代计算。
 </code></pre>
     </div>
 
@@ -214,7 +230,7 @@ L2损失 (损失函数,平方损失) : (y - y&apos;)2  有标签样本的实际�
 <div class="article-nav prev-next-wrap clearfix">
     
     
-        <a href="/2018/03/16/服务器部署mysql/" class="next-post btn btn-default">下一篇<i class="fa fa-angle-right fa-fw"></i></a>
+        <a href="/2018/03/16/修改服务器mysql的用户名密码/" class="next-post btn btn-default">下一篇<i class="fa fa-angle-right fa-fw"></i></a>
     
 </div>
 
@@ -316,7 +332,7 @@ L2损失 (损失函数,平方损失) : (y - y&apos;)2  有标签样本的实际�
         
     <div class="widget">
         <h3 class="title">Categories</h3>
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link current" href="/categories/人工智能/"><i class="fa" aria-hidden="true">人工智能</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/后端/"><i class="fa" aria-hidden="true">后端</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/坑/"><i class="fa" aria-hidden="true">坑</i></a><span class="category-list-count">1</span></li></ul>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/人工智能/"><i class="fa" aria-hidden="true">人工智能</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link current" href="/categories/后端/"><i class="fa" aria-hidden="true">后端</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/坑/"><i class="fa" aria-hidden="true">坑</i></a><span class="category-list-count">1</span></li></ul>
     </div>
 
 
