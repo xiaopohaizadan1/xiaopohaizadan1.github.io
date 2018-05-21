@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>XStresam日期转化器 | 学习之路</title>
+<title>Archives: 2018 | 学习之路</title>
 
 
     <link rel="alternate" href="/atom.xml" title="学习之路" type="application/atom+xml">
@@ -118,137 +118,27 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content m-post">
-                    <p id="process"></p>
-<article class="post">
-    <div class="post-head">
-        <h1 id="XStresam日期转化器">
-            
-	            XStresam日期转化器
-            
-        </h1>
-        <div class="post-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/后端">
-            后端
-        </a>
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-            <a href="/tags/技巧">
-               技巧
-            </a>
-            
-        </span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2018/03/01</span>
-    </span>
-    <span class="fa-wrap">
-        <i class="fa fa-hand-spock-o">阅读数:</i>
-        <span class="date-meta">1000</span>
-    </span>
-</div>
-
-            
-            
-    </div>
-    
-    <div class="post-body post-content">
-        <h1 id="1-属性转化器"><a href="#1-属性转化器" class="headerlink" title="1. 属性转化器"></a>1. 属性转化器</h1><p>实现 SingleValueConverter 接口（String 与 Object 之间的转换）   </p>
-<p>XStream是有一个默认的DateConverter的转化器的，但是并不是所有的时间格式都能支持，所以才需要自定义转化器</p>
-<h2 id="接口有三个方法"><a href="#接口有三个方法" class="headerlink" title="接口有三个方法:"></a>接口有三个方法:</h2><h3 id="1-canConvert-Class-aClass"><a href="#1-canConvert-Class-aClass" class="headerlink" title="1.canConvert(Class aClass)"></a>1.canConvert(Class aClass)</h3><pre><code>判断是否使用这个转化器
-</code></pre><h3 id="2-fromString-String-s"><a href="#2-fromString-String-s" class="headerlink" title="2.fromString(String s)"></a>2.fromString(String s)</h3><pre><code>String 转成 任意类型 这边是转成Date
-</code></pre><h3 id="3-toString-Object-o"><a href="#3-toString-Object-o" class="headerlink" title="3.toString(Object o)"></a>3.toString(Object o)</h3><pre><code>Object 转成 String 
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">package com.learn.test.Utils;</span><br><span class="line"></span><br><span class="line">import com.thoughtworks.xstream.converters.SingleValueConverter;</span><br><span class="line">import org.apache.commons.lang.time.DateUtils;</span><br><span class="line"></span><br><span class="line">import java.util.Date;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @author geweijian</span><br><span class="line"> * @data 2018-02-25</span><br><span class="line"> */</span><br><span class="line">public class DateConverter implements SingleValueConverter &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public String toString(Object o) &#123;</span><br><span class="line">        <span class="built_in">return</span> null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public Object fromString(String s) &#123;</span><br><span class="line"></span><br><span class="line">        String[] parsePatterns = &#123;<span class="string">"yyyyMMddHHmmss"</span>, <span class="string">"yyyy-MM-dd"</span>&#125;;</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line">            <span class="built_in">return</span> DateUtils.parseDate(s, parsePatterns);</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public boolean canConvert(Class aClass) &#123;</span><br><span class="line">        <span class="built_in">return</span> aClass.equals(Date.class);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用:"></a>使用:</h2><p>只需要在相应的属性上面加上@XStreamConverter(value = DateConverter.class)</p>
-<hr>
-<h1 id="2-元素转化器"><a href="#2-元素转化器" class="headerlink" title="2.元素转化器"></a>2.元素转化器</h1><p>`<br>package com.learn.test.Utils;</p>
-<p>import com.thoughtworks.xstream.converters.Converter;<br>import com.thoughtworks.xstream.converters.MarshallingContext;<br>import com.thoughtworks.xstream.converters.UnmarshallingContext;<br>import com.thoughtworks.xstream.io.HierarchicalStreamReader;<br>import com.thoughtworks.xstream.io.HierarchicalStreamWriter;<br>import lombok.NoArgsConstructor;</p>
-<p>/**</p>
-<ul>
-<li>@author geweijian</li>
-<li><p>@data 2018-02-24<br>*/<br>@NoArgsConstructor<br>public class PojoMapConverter implements Converter {</p>
-<p> /**</p>
-<ul>
-<li>序列化 将java对象转化为xml<br>*</li>
-<li>@param o</li>
-<li>@param hierarchicalStreamWriter startNode(String name)和endNode()作为一对出现的方法</li>
-<li><p>@param marshallingContext<br>*/<br>@Override<br>public void marshal(Object o, HierarchicalStreamWriter hierarchicalStreamWriter, MarshallingContext marshallingContext) {</p>
-<p>}</p>
-<p>/**</p>
-</li>
-<li>反序列化<br>*</li>
-<li>@param hierarchicalStreamReader</li>
-<li>@param unmarshallingContext</li>
-<li><p>@return<br>*/<br>@Override<br>public Object unmarshal(HierarchicalStreamReader hierarchicalStreamReader, UnmarshallingContext unmarshallingContext) {</p>
-<p> hierarchicalStreamReader.moveDown();<br>//        hierarchicalStreamReader.<br>//        hierarchicalStreamReader.moveUp();<br>//        System.out.println(date);</p>
-<p> return null;<br>}</p>
-<p>/**</p>
-</li>
-<li>判断需要序列化的对象是否使用此转化器<br>*</li>
-<li>@param aClass</li>
-<li><p>@return<br>*/<br>@Override<br>public boolean canConvert(Class aClass) {<br>//        String className = aClass.getName();<br>//        System.out.println(className);<br>//        if (className.equals(“Person”)) {<br>//            return true;<br>//        }<br>//        return false;</p>
-<p> return aClass.equals(Person.class);<br>}</p>
-</li>
-</ul>
-</li>
-</ul>
-<p>}<br>`</p>
-<h3 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h3><p> 使用XStream的对象去注册转化器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">XStream xStream = new XStream(new DomDriver());</span><br><span class="line">xStream.registerConverter(new PojoMapConverter());</span><br><span class="line">xStream.processAnnotations(Person.class);</span><br></pre></td></tr></table></figure></p>
-
-    </div>
-
-    <div class="post-footer">   
-        <div>
-            
-                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
-            
-        </div>
-        <div>
-            
-        </div>  
-    </div>
-</article>
-
-<div class="article-nav prev-next-wrap clearfix">
-    
-        <a href="/2018/03/16/修改服务器mysql的用户名密码/" class="pre-post btn btn-default"><i class="fa fa-angle-left fa-fw"></i>上一篇</a>
-    
-    
-        <a href="/2018/02/28/java8分享/" class="next-post btn btn-default">下一篇<i class="fa fa-angle-right fa-fw"></i></a>
-    
-</div>
-
-
-    <div id="comments">
+                <main class="col-md-8 main-content ">
+                    <div id="main">
+  <div id="post-list">
+    <ul class="archives-post-list">
+    	<h1 class="info">2018年 月</h1>
         
-	
-<div id="lv-container" data-id="city" data-uid="MTAyMC8zNDQ0OC8xMDk4NQ">
-  <script type="text/javascript">
-     (function(d, s) {
-         var j, e = d.getElementsByTagName(s)[0];
-         if (typeof LivereTower === 'function') { return; }
-         j = d.createElement(s);
-         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-         j.async = true;
-         e.parentNode.insertBefore(j, e);
-     })(document, 'script');
-  </script>
+          <li class="post-items" _href="/2018/02/09/hello-world/">
+            <h3 class="post-item-title">
+            	<a href="/2018/02/09/hello-world/"> Hello World </a>
+            </h3>  
+          </li>
+        
+    </ul>
+  </div>
 </div>
 
-
-    </div>
+    <nav class="pagination" role="navigation">
+        <div id="page-nav">
+            <a class="extend prev" rel="prev" href="/archives/2018/"><i class='fa fa-angle-left'></i></a><a class="page-number" href="/archives/2018/">1</a><span class="page-number current">2</span>
+        </div>
+    </nav>
 
 
 
