@@ -1,0 +1,473 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="学习之路">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="https://xiaopohaizadan1.github.io">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>高阶函数 | 学习之路</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="学习之路" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="">
+            <img src="/img/avatar.jpg" alt="logo头像">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 勇者无惧，强者无敌 </h2>
+             
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="fa fa-bars"></i>
+                    </span>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation"><a href="/"><i class="fa fa-fw "></i>首頁</a>
+                            </li>
+                        
+                            <li role="presentation"><a href="/categories/后端/"><i class="fa fa-fw "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation"><a href="/categories/坑/"><i class="fa fa-fw "></i>坑</a>
+                            </li>
+                        
+                            <li role="presentation"><a href="/categories/人工智能/"><i class="fa fa-fw "></i>人工智能</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="高阶函数">
+            
+	            高阶函数
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/python">
+            python
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a href="/tags/python">
+               python
+            </a>
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">2018/08/31</span>
+    </span>
+    <span class="fa-wrap">
+        <i class="fa fa-hand-spock-o">阅读数:</i>
+        <span class="date-meta">1000</span>
+    </span>
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="1-切片-Slice"><a href="#1-切片-Slice" class="headerlink" title="1.切片(Slice)"></a>1.切片(Slice)</h2><ol>
+<li><p>d = [1,2,3]</p>
+<p>d[0:2]   返回  [1,2]</p>
+<p>d[0:1]   返回  [1]    </p>
+</li>
+<li><p>d[:3]  返回 [1,2,3]     :前面的0可以省略</p>
+</li>
+<li><p>d[-1]  是取倒数第一个元素</p>
+</li>
+<li><p>d[:10:2]   前十个数，每两个取一个值</p>
+</li>
+<li><p>d[::5]     所有数没五个取一个</p>
+</li>
+<li><p>f = d[:] 复制</p>
+</li>
+<li><p>tuple 的切片</p>
+<p>(1,2,3,4)[0:2]   返回  (1,2)</p>
+</li>
+</ol>
+<h2 id="2-迭代"><a href="#2-迭代" class="headerlink" title="2.迭代"></a>2.迭代</h2><ol>
+<li><p>for 。。。 in</p>
+<p>无论是list还是tuple都可以使用 for 。。。 in  来实现循环</p>
+</li>
+<li><p>dict默认使用key来迭代的，如果想要值迭代的需要 dict.vlaues()</p>
+<p>for x in d:</p>
+<p>​    print(x)          对key迭代</p>
+<p>for x in d.values():</p>
+<p>​    print(x).          对值迭代</p>
+<p>for x in d.items():</p>
+<p>​    print(x)        对key-value 迭代</p>
+</li>
+</ol>
+<ol>
+<li><p>判断一个对象是否是可以迭代的</p>
+<p>​    import Iterable from collections</p>
+<p>​    isinstance(‘abc’,Iterable)  True   str 是可以迭代的</p>
+<p>​    isinstance([1,2,3],Iterable)  True   list 是可以迭代的</p>
+<p>​    isinstance(123,Iterable)  False   整数 是不可以迭代的</p>
+</li>
+<li><p>enumerate()  将list变为索引-值的dict</p>
+</li>
+</ol>
+<h2 id="3-列表生成式"><a href="#3-列表生成式" class="headerlink" title="3.列表生成式"></a>3.列表生成式</h2><ol>
+<li><p>[x * x  for x in range(1,11)]</p>
+<p>生成 一个 1-10 的平方的列表</p>
+</li>
+<li><p>[x * x for x in range(1,11) if x%2 == 0]    偶数的平方</p>
+</li>
+<li><p>两层循环  生成全排列</p>
+<p>[m+n  for m in ‘ABC’ for n in ‘XYZ’]</p>
+</li>
+<li><p>import os </p>
+<p>[x for x in listdir(‘.’)]     列出当前目录下所有的文件</p>
+</li>
+</ol>
+<h2 id="4-生成器"><a href="#4-生成器" class="headerlink" title="4.生成器"></a>4.生成器</h2><ol>
+<li>创建生成器</li>
+</ol>
+<p>​    g = (x * x for x in range(10))  这就是一个生成器</p>
+<p>​    和列表生成式的不一样在于 一个是[]   一个是() </p>
+<ol>
+<li><p>遍历元素</p>
+<p>next(g) 获取生成器里面的元素</p>
+<p>一般使用for 循环来遍历</p>
+<p>​    for n in g:</p>
+<p>​        print(n)</p>
+</li>
+<li><p>斐波拉契数列</p>
+<p>def  fib(max):</p>
+<p>​    n,a,b = 0,0,1</p>
+<p>​    while n &lt; max:</p>
+<p>​        print(b)</p>
+<p>​        a,b = b,a+b</p>
+<p>​        n = n +1</p>
+<p>​    return ‘done’</p>
+</li>
+<li><p>定义 一个 生成器  需要使用yield</p>
+<p>每次调用next() 的时候，遇到yield的时候返回   下次在调用next()的时候从yield的地方返回 </p>
+</li>
+<li><p>捕获异常</p>
+<p>try ：</p>
+<p>except StopIteration as e :</p>
+<p>​    print (e)</p>
+<p>​    break</p>
+</li>
+</ol>
+<h2 id="5-迭代器"><a href="#5-迭代器" class="headerlink" title="5.迭代器"></a>5.迭代器</h2><ol>
+<li><p>可以作用于for 循环的对象都是Iterable对象</p>
+<p>isinstance()判断一个对象是否是Iterable对象</p>
+<p>form collections import Iterable</p>
+<p>isinstance([],Iterable)</p>
+<p>isinstance({},Iterable)</p>
+</li>
+<li><p>可以被next()函数调用的并且不断返回值的对象  称为Iterator迭代器</p>
+<p>form collections import Iterator</p>
+<p>isinstance([],Iterator) False</p>
+<p>instance((x for x in range(10)),Iterator) Ture</p>
+<p>生成器都是迭代器</p>
+</li>
+<li><p>list  dict  str  是Iterable 对象  但是不是  Iterator</p>
+<p>iter(list)  函数可以Iterable对象转为一个Iterator</p>
+</li>
+</ol>
+
+    </div>
+
+    <div class="post-footer">   
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>  
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/08/31/高阶函数/" class="pre-post btn btn-default"><i class="fa fa-angle-left fa-fw"></i>上一篇</a>
+    
+    
+        <a href="/2018/08/31/获取对象的信息/" class="next-post btn btn-default">下一篇<i class="fa fa-angle-right fa-fw"></i></a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNDQ0OC8xMDk4NQ">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+    <aside class="col-md-4 sidebar">
+        
+        
+    <div class="widget">    
+        <h3 class="title">搜尋</h3>
+        <div id="search-form">
+            <div id="result-mask" class="hide"></div>
+            <div class="search-area">
+                
+                    <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢?">
+                    <button type="button" class="search-form-submit" id="search-local">站內搜索</button>
+                
+                
+            </div>
+            <div id="result-wrap" class="hide">
+                <div id="search-result"></div>
+            </div>
+            <div class="hide">
+                <template id="search-tpl">
+                    <div class="item">
+                        <a href="/{path}" title="{title}">
+                            <div class="title">{title}</div>
+                            <div class="content">{content}</div>
+                        </a>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget notification">
+        <h3 class="title">网站公告</h3>
+        <div>
+            <p>主题Snippet v1.2.0版本已经上线！欢迎更新~ <br/>
+主题下载：<a href="https://github.com/shenliyang/hexo-theme-snippet" title="fork me" target="_blank">Snippet主题</a> <br/>
+<hr/>接受贡献，包括不限于提交问题与需求，修复代码。欢迎Pull Request<br/>支持主题：<a href="https://github.com/shenliyang/hexo-theme-snippet/stargazers">Star一下</a>
+</p>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget">
+      <h3 class="title">社交</h3> 
+        <div class="content social">
+            
+	            <a href="//github.com/xiaopohaizadan1" rel="external nofollow" title="Github" target="_blank">
+			    	<i class="git fa fa-git"></i>
+			    </a>
+            
+	            <a href="mailto:snippet@91h5.cc" rel="external nofollow" title="邮箱" target="_blank">
+			    	<i class="envelope-o fa fa-envelope-o"></i>
+			    </a>
+            
+	            <a href="/" rel="external nofollow" title="联系QQ" target="_blank">
+			    	<i class="qq fa fa-qq"></i>
+			    </a>
+            
+	            <a href="/" rel="external nofollow" title="微博" target="_blank">
+			    	<i class="weibo fa fa-weibo"></i>
+			    </a>
+            
+        </div>
+    </div>
+
+
+        
+        
+    <div class="widget">
+        <h3 class="title">分類</h3>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/python/"><i class="fa" aria-hidden="true">python</i></a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/人工智能/"><i class="fa" aria-hidden="true">人工智能</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link current" href="/categories/后端/"><i class="fa" aria-hidden="true">后端</i></a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/坑/"><i class="fa" aria-hidden="true">坑</i></a><span class="category-list-count">1</span></li></ul>
+    </div>
+
+
+        
+        
+    <div class="widget">
+      <h3 class="title">彙整</h3>
+        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/"><i class="fa" aria-hidden="true">August 2018</i></a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/"><i class="fa" aria-hidden="true">July 2018</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/"><i class="fa" aria-hidden="true">March 2018</i></a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/"><i class="fa" aria-hidden="true">February 2018</i></a><span class="archive-list-count">7</span></li></ul>
+    </div>
+
+
+        
+        
+  <div class="widget">
+    <h3 class="title">標籤雲</h3>
+    <div class="content tag-cloud">
+        <a href="/tags/BP/" style="font-size: 10px;">BP</a> <a href="/tags/cs/" style="font-size: 10px;">cs</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/java8/" style="font-size: 16.67px;">java8</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/分享/" style="font-size: 13.33px;">分享</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/遇过的坑/" style="font-size: 10px;">遇过的坑</a>
+    </div>
+  </div>
+
+
+        
+        
+    <div class="widget">
+        <h3 class="title">友鏈</h3>
+        <div class="content friends-link">
+        
+            <a href="http://www.huminxi.com" class="fa" target="_blank">黄枫谷</a>
+        
+        </div>
+    </div>
+
+
+        
+    </aside>
+
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2017
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+	<script src="/js/search.js?rev=@@hash"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

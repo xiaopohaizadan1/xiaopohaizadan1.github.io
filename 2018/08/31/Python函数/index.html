@@ -1,0 +1,462 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="学习之路">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="https://xiaopohaizadan1.github.io">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>Python函数 | 学习之路</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="学习之路" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="">
+            <img src="/img/avatar.jpg" alt="logo头像">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 勇者无惧，强者无敌 </h2>
+             
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="fa fa-bars"></i>
+                    </span>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation"><a href="/"><i class="fa fa-fw "></i>首頁</a>
+                            </li>
+                        
+                            <li role="presentation"><a href="/categories/后端/"><i class="fa fa-fw "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation"><a href="/categories/坑/"><i class="fa fa-fw "></i>坑</a>
+                            </li>
+                        
+                            <li role="presentation"><a href="/categories/人工智能/"><i class="fa fa-fw "></i>人工智能</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Python函数">
+            
+	            Python函数
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/python">
+            python
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a href="/tags/python">
+               python
+            </a>
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">2018/08/31</span>
+    </span>
+    <span class="fa-wrap">
+        <i class="fa fa-hand-spock-o">阅读数:</i>
+        <span class="date-meta">1000</span>
+    </span>
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="Python函数"><a href="#Python函数" class="headerlink" title="Python函数"></a>Python函数</h1><h2 id="一、调用函数"><a href="#一、调用函数" class="headerlink" title="一、调用函数"></a>一、调用函数</h2><p>1.abs() 绝对值函数 参数只能为一个并且类型是int型的</p>
+<p>2.max(1,2,3,4)  最大值函数  返回 4  参数可以有多个 </p>
+<p>3.int(‘123’)    转化为整数 123 </p>
+<p>4.float(‘12.32’)  </p>
+<p>5.str(100)   返回 ‘100’</p>
+<p>6.bool(1)  返回true  bool(‘12’) 返回true   bool(‘’) 返回 false</p>
+<p>7.a = abs  a指向abs函数</p>
+<p>   a(-10) 返回 10 </p>
+<p>8.hex(12)   把整数转化为16进制的字符串</p>
+<h2 id="二、定义函数"><a href="#二、定义函数" class="headerlink" title="二、定义函数"></a>二、定义函数</h2><ol>
+<li><p>def my_abs(x):</p>
+<p>​    if x&gt;=0:</p>
+<p>​        return x;</p>
+<p>​    else:</p>
+<p>​        return -x;</p>
+</li>
+</ol>
+<ol>
+<li><p>将函数定义保存在abstest.py 文件中 ，在文件所在的目录下启动python解释器 ，通过 import my_abs from abstest 引入函数my_abs 可以调用</p>
+<p>import的名称必须和py文件里面定义的名称一样，不然显示无法import</p>
+</li>
+</ol>
+<ol>
+<li><p>空函数</p>
+<p>def nop():</p>
+<p>​    pass</p>
+<p>pass 实际上起到的作用是占位符，可以让程序先把跑起来，不会报错</p>
+</li>
+</ol>
+<ol>
+<li><p>isinstance(x,(int,float)) 判断x是否是int 或者是flost的类型的</p>
+<p>raise TypeError(‘’)   抛出异常</p>
+</li>
+<li><p>位置参数</p>
+<p>def power(x,n):</p>
+<p>​    s = 1 </p>
+<p>​    while n &gt; 0:</p>
+<p>​        n = n -1</p>
+<p>​        s =s*x</p>
+<p>​    return s</p>
+</li>
+<li><p>默认参数 如果power()不传第二个参数的话默认的就是2 如果传的话就按照传的参数来  默认参数一定要放在 必选参数后面，放在前面的话 鬼知道你传的这个值是给必选参数的还是给默认参数的</p>
+<p>当函数有多个参数时，把变化大的参数放前面，变化小的参数放后面。变化小的参数就可以作为默认参数。</p>
+<p>def  power(x,n=2):</p>
+<p>​    pass </p>
+</li>
+<li><p>def  add_end(L = []):</p>
+<p>​    L.append(“END”)</p>
+<p>​    renturn L</p>
+<p>add_end()  返回 [‘END’]</p>
+<p>add_end()  返回 [‘END’,’END’]</p>
+<p>python 函数在定义的过程中，默认参数的L的值会被计算出来，L 是变量 指向 一个对象[]  ，每次调用函数的时候 对象的[]的值会发生改变</p>
+<p>默认参数必须指向不变对象!</p>
+</li>
+<li><p>可变参数</p>
+<p>def clac(numbers):</p>
+<p>​    sum = 0</p>
+<p>​    for n in numbers：</p>
+<p>​        sum = sum+n*n</p>
+<p>​    return sum</p>
+<p>clac([1,2,3])  只能将参数作为一个list或者tuple传入</p>
+<p>clac(1,2,3)</p>
+<p>def clac(*numbers) 只有这样，才能 clac(1,2,3)  这样调用</p>
+</li>
+<li><p>关键字参数</p>
+<p>def person(name,age,**kw):</p>
+<p>​    print(‘name’,name,’age’,age,’other’,kw)</p>
+<p>person(‘haha’,14,city=’beijing’,job=’engineer’)</p>
+<p>extra = {‘city’:’beijing’,’job’:’engineer’}</p>
+<p>person(‘haha’,14,**extra)</p>
+</li>
+<li><p>参数定义的顺序必须是：必选参数、默认参数、可变参数、命名关键字参数和关键字参数。</p>
+</li>
+<li><p>练习：</p>
+<p>def product(*num):</p>
+<p>​    sum = 1</p>
+<p>​    for n in sum:</p>
+<p>​        sum = sum * n</p>
+<p>​    return sum</p>
+</li>
+</ol>
+<ol>
+<li><p>递归函数</p>
+<p>在函数中调用自身的函数</p>
+<p>def fact(n):</p>
+<p>​    if n == 1 :</p>
+<p>​        return 1</p>
+<p>​    return n * fact(n - 1)</p>
+<p>栈溢出   函数调用是通过栈stack 数据结构实现的  每当进入一个函数 调用 栈会加一层栈帧 每当函数 返回 栈会减少一层栈帧 。 栈的大小不是无效的。当函数调用过多的时候，会导致栈溢出</p>
+</li>
+<li><p>尾递归</p>
+<p>函数返回的时候调用自身本身，并且不能有表达式</p>
+</li>
+</ol>
+
+    </div>
+
+    <div class="post-footer">   
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>  
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2018/08/31/高阶函数/" class="next-post btn btn-default">下一篇<i class="fa fa-angle-right fa-fw"></i></a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNDQ0OC8xMDk4NQ">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+    <aside class="col-md-4 sidebar">
+        
+        
+    <div class="widget">    
+        <h3 class="title">搜尋</h3>
+        <div id="search-form">
+            <div id="result-mask" class="hide"></div>
+            <div class="search-area">
+                
+                    <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢?">
+                    <button type="button" class="search-form-submit" id="search-local">站內搜索</button>
+                
+                
+            </div>
+            <div id="result-wrap" class="hide">
+                <div id="search-result"></div>
+            </div>
+            <div class="hide">
+                <template id="search-tpl">
+                    <div class="item">
+                        <a href="/{path}" title="{title}">
+                            <div class="title">{title}</div>
+                            <div class="content">{content}</div>
+                        </a>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget notification">
+        <h3 class="title">网站公告</h3>
+        <div>
+            <p>主题Snippet v1.2.0版本已经上线！欢迎更新~ <br/>
+主题下载：<a href="https://github.com/shenliyang/hexo-theme-snippet" title="fork me" target="_blank">Snippet主题</a> <br/>
+<hr/>接受贡献，包括不限于提交问题与需求，修复代码。欢迎Pull Request<br/>支持主题：<a href="https://github.com/shenliyang/hexo-theme-snippet/stargazers">Star一下</a>
+</p>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget">
+      <h3 class="title">社交</h3> 
+        <div class="content social">
+            
+	            <a href="//github.com/xiaopohaizadan1" rel="external nofollow" title="Github" target="_blank">
+			    	<i class="git fa fa-git"></i>
+			    </a>
+            
+	            <a href="mailto:snippet@91h5.cc" rel="external nofollow" title="邮箱" target="_blank">
+			    	<i class="envelope-o fa fa-envelope-o"></i>
+			    </a>
+            
+	            <a href="/" rel="external nofollow" title="联系QQ" target="_blank">
+			    	<i class="qq fa fa-qq"></i>
+			    </a>
+            
+	            <a href="/" rel="external nofollow" title="微博" target="_blank">
+			    	<i class="weibo fa fa-weibo"></i>
+			    </a>
+            
+        </div>
+    </div>
+
+
+        
+        
+    <div class="widget">
+        <h3 class="title">分類</h3>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/python/"><i class="fa" aria-hidden="true">python</i></a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/人工智能/"><i class="fa" aria-hidden="true">人工智能</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link current" href="/categories/后端/"><i class="fa" aria-hidden="true">后端</i></a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/坑/"><i class="fa" aria-hidden="true">坑</i></a><span class="category-list-count">1</span></li></ul>
+    </div>
+
+
+        
+        
+    <div class="widget">
+      <h3 class="title">彙整</h3>
+        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/"><i class="fa" aria-hidden="true">August 2018</i></a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/"><i class="fa" aria-hidden="true">July 2018</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/"><i class="fa" aria-hidden="true">March 2018</i></a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/"><i class="fa" aria-hidden="true">February 2018</i></a><span class="archive-list-count">7</span></li></ul>
+    </div>
+
+
+        
+        
+  <div class="widget">
+    <h3 class="title">標籤雲</h3>
+    <div class="content tag-cloud">
+        <a href="/tags/BP/" style="font-size: 10px;">BP</a> <a href="/tags/cs/" style="font-size: 10px;">cs</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/java8/" style="font-size: 16.67px;">java8</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/分享/" style="font-size: 13.33px;">分享</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/遇过的坑/" style="font-size: 10px;">遇过的坑</a>
+    </div>
+  </div>
+
+
+        
+        
+    <div class="widget">
+        <h3 class="title">友鏈</h3>
+        <div class="content friends-link">
+        
+            <a href="http://www.huminxi.com" class="fa" target="_blank">黄枫谷</a>
+        
+        </div>
+    </div>
+
+
+        
+    </aside>
+
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2017
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+	<script src="/js/search.js?rev=@@hash"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>
